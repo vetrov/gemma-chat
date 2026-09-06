@@ -8,5 +8,17 @@
         "minimax/minimax-m3:free": {}
       }
     }
+  },
+  "permission": {
+    "bash": {
+      "*": "allow",
+      "rm -rf .git*": "deny",
+      "rm -rf .github*": "deny",
+      "rm -rf *": "deny",
+      "git init*": "deny",
+      "git reset --hard*": "deny",
+      "git push --force*": "deny",
+      "git push -f*": "deny"
+    }
   }
 }
