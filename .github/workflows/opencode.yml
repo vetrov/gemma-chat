@@ -6,6 +6,10 @@ on:
   pull_request_review_comment:
     types: [created]
 
+env:
+  OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+  OPENCODE_CONFIG: ${{ github.workspace }}/.github/opencode/opencode.json
+
 jobs:
   opencode:
     if: |
