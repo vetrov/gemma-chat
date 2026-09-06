@@ -1,0 +1,42 @@
+# Agent Instructions
+
+## Stack
+- Build tool: Vite
+- Framework: React (functional components + hooks only, no class components)
+- Routing: React Router (v6+ data router API — `createBrowserRouter`)
+- Package manager: npm
+- Styling: plain CSS Modules unless a feature issue says otherwise
+- Language: TypeScript, strict mode enabled
+
+## Folder structure
+```
+src/
+  routes/        # one folder per route, colocated component + styles
+  components/    # shared, reusable components
+  lib/           # non-UI helpers, API clients, utils
+  types/         # shared type definitions not colocated with a component
+main.tsx
+```
+
+## Conventions
+- One component per file, named exports preferred over default exports (except route entry components).
+- Keep components small — extract a child component rather than letting one file grow past ~150 lines.
+- No inline styles; use CSS Modules (`Component.module.css`) colocated with the component.
+- Add a short comment above any non-obvious logic, not above self-explanatory code.
+- No `any` — use `unknown` and narrow, or define a proper type/interface. Avoid `as` casts except when narrowing a known-safe union.
+- Prefer `interface` for object shapes/props, `type` for unions and utility types.
+- Component props get an explicit `Props` interface, not inline typing on the function signature.
+
+## Required on every PR
+- Code must pass lint (`npm run lint`) and build (`npm run build`) before you consider the task done.
+- If you add a new npm dependency, explain why in the PR description.
+- If the issue describes user-facing behavior, add or update a test for it (Vitest + React Testing Library once installed).
+- Do not modify `.github/workflows/` files unless the issue explicitly asks for it.
+
+## Out of bounds
+- Don't install a UI framework (MUI, Chakra, etc.) unless an issue explicitly requests it.
+- Don't add state management libraries (Redux, Zustand, etc.) unless an issue explicitly requests it — use React state/context by default.
+- Don't rewrite or restructure files outside the scope of the current issue.
+
+## CI expectations
+- `npm run lint`, `npm run typecheck`, and `npm run build` must all pass in GitHub Actions on every PR. If the bootstrap issue is the one setting this up, the workflow file should run these three commands on `pull_request` events targeting `main`.
