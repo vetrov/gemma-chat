@@ -11,6 +11,10 @@
     }
   },
   "permission": {
+    "*": "allow",
+    "external_directory": "deny",
+    "webfetch": "deny",
+    "websearch": "deny",
     "bash": {
       "*": "allow",
       "rm -rf .git*": "deny",
