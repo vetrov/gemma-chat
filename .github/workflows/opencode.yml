@@ -31,7 +31,7 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENCODE_CONFIG: ${{ github.workspace }}/.github/opencode/opencode.json
         with:
-          model: openrouter/minimax/minimax-m3:free
+          model: openrouter/poolside/laguna-s-2.1:free
 
       - name: Report disk usage
         if: always()
