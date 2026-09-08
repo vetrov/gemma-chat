@@ -31,7 +31,7 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENCODE_CONFIG: ${{ github.workspace }}/.github/opencode/opencode.json
         with:
-          model: openrouter/cohere/north-mini-code:free
+          model: openrouter/minimax/minimax-m3:free
 
       - name: Report disk usage
         if: always()

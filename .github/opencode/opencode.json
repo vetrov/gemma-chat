@@ -11,7 +11,14 @@
     }
   },
   "permission": {
-    "*": "allow",
+    "*": "deny",
+    "edit": "allow",
+    "read": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "task": "allow",
+    "skill": "allow",
+    "todowrite": "allow",
     "external_directory": "deny",
     "webfetch": "deny",
     "websearch": "deny",
