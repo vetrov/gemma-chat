@@ -6,10 +6,6 @@ on:
   pull_request_review_comment:
     types: [created]
 
-env:
-  OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-  OPENCODE_CONFIG: ${{ github.workspace }}/.github/opencode/opencode.json
-
 jobs:
   opencode:
     if: |
@@ -33,5 +29,14 @@ jobs:
         uses: anomalyco/opencode/github@latest
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENCODE_CONFIG: ${{ github.workspace }}/.github/opencode/opencode.json
         with:
           model: openrouter/cohere/north-mini-code:free
+
+      - name: Report disk usage
+        if: always()
+        run: |
+          echo "--- Disk free ---"
+          df -h /
+          echo "--- Largest dirs in workspace ---"
+          du -sh "${{ github.workspace }}"/* 2>/dev/null | sort -rh | head -10

@@ -39,6 +39,8 @@ main.tsx
 - Don't rewrite or restructure files outside the scope of the current issue.
 - Never delete or reinitialize the `.git` directory, and never delete `.github/`. If something needs a clean slate, remove specific files you created, not the whole directory tree.
 - If a scaffolding step fails or produces a messy result, fix it incrementally or ask a clarifying question in a comment — don't `rm -rf` and start over.
+- Stay inside the repository directory. Never create sibling or temp directories outside the checkout (e.g. `../repo-temp`) to redo work — edit files in place.
+- Never create a second copy of the project inside the repo either (e.g. `gemma-chat-temp/`, `scaffold-v2/`). There is exactly one project tree — this one. Run `npm install` once; don't reinstall into a fresh subfolder if something looks wrong, fix the existing install.
 
 ## Clarifying questions
 - If an issue is ambiguous, missing a decision (e.g. which library, what the exact UX should be), or could reasonably be implemented multiple ways, post a comment on the issue listing your specific questions instead of guessing.
