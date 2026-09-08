@@ -29,6 +29,10 @@ main.tsx
 
 ## Required on every PR
 - Code must pass lint (`npm run lint`) and build (`npm run build`) before you consider the task done.
+- Before creating or claiming a PR is complete, verify from a clean working tree by running `npm ci`, `npm run lint`, `npm run typecheck`, and `npm run build`.
+- Never substitute `npm install`, `--force`, or `--legacy-peer-deps` for `npm ci` during verification.
+- If any verification command fails, fix the issue and rerun the complete sequence.
+- After pushing, wait for the GitHub Actions CI run to finish and inspect its result. Do not claim checks pass unless the remote CI run is green; include its URL and commit SHA.
 - If you add a new npm dependency, explain why in the PR description.
 - If the issue describes user-facing behavior, add or update a test for it (Vitest + React Testing Library once installed).
 - Do not modify `.github/workflows/` files unless the issue explicitly asks for it.
