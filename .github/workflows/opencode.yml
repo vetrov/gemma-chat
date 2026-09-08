@@ -31,7 +31,7 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENCODE_CONFIG: ${{ github.workspace }}/.github/opencode/opencode.json
         with:
-          model: openrouter/poolside/laguna-s-2.1:free
+          model: openrouter/nvidia/nemotron-3-ultra-550b-a55b:free
 
       - name: Report disk usage
         if: always()
