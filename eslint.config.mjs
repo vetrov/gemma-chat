@@ -7,6 +7,7 @@ import prettierPlugin from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
 
 export default tseslint.config(
+  { ignores: ['dist', 'node_modules', '*.config.*', '*.config.ts'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
@@ -30,7 +31,7 @@ export default tseslint.config(
     },
     settings: {
       react: {
-        version: '18.3',
+        version: '19.2',
       },
     },
     rules: {
