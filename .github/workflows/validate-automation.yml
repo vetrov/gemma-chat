@@ -55,7 +55,7 @@ jobs:
           tar --extract --gzip --file "$archive" --directory "$RUNNER_TEMP" actionlint
 
       - name: Validate GitHub Actions workflows
-        run: "$RUNNER_TEMP/actionlint"
+        run: '"$RUNNER_TEMP/actionlint"'
 
       - name: Install zizmor
         env:
@@ -71,4 +71,4 @@ jobs:
           tar --extract --gzip --file "$archive" --directory "$RUNNER_TEMP" zizmor
 
       - name: Audit GitHub Actions security
-        run: "$RUNNER_TEMP/zizmor .github/workflows"
+        run: '"$RUNNER_TEMP/zizmor" .github/workflows'
