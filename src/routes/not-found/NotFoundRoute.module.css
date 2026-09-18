@@ -1,0 +1,41 @@
+.page {
+  display: grid;
+  min-height: 100vh;
+  align-content: center;
+  justify-items: start;
+  padding: clamp(2rem, 8vw, 8rem);
+}
+
+.code {
+  margin: 0 0 1rem;
+  color: var(--color-accent);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.page h1 {
+  max-width: 16ch;
+  margin: 0;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.page > p:not(.code) {
+  margin: 1.5rem 0 0;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.link {
+  margin-top: 2rem;
+  border-bottom: 1px solid currentColor;
+  color: var(--color-text);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--color-accent);
+}

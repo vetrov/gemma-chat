@@ -1,8 +1,30 @@
 # gemma-chat
 
-A planned browser-based chat application powered by Gemma.
+A browser-based chat application powered by Gemma.
 
-The application has not been bootstrapped yet. This repository currently contains the project conventions and GitHub automation used to develop it.
+## Development
+
+Prerequisites:
+
+- Node.js 22
+- npm 10 or newer
+
+Install dependencies and start the development server:
+
+```bash
+npm install
+npm run dev
+```
+
+Run the project checks:
+
+```bash
+npm run lint
+npm run typecheck
+npm run build
+```
+
+The application uses Vite, React, strict TypeScript, React Router's data router API, and CSS Modules. Route components are colocated under `src/routes`; shared UI, helpers, and types belong in their corresponding `src` directories.
 
 ## OpenCode automation
 
