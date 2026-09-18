@@ -2,6 +2,10 @@
   "$schema": "https://opencode.ai/config.json",
   "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
   "small_model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+  "share": "disabled",
+  "autoupdate": false,
+  "snapshot": false,
+  "enabled_providers": ["openrouter"],
   "provider": {
     "openrouter": {
       "models": {
@@ -18,6 +22,8 @@
     "task": "allow",
     "skill": "allow",
     "todowrite": "allow",
+    "question": "deny",
+    "doom_loop": "deny",
     "external_directory": "deny",
     "webfetch": "deny",
     "websearch": "deny",
@@ -28,8 +34,11 @@
       "rm -rf *": "deny",
       "git init*": "deny",
       "git reset --hard*": "deny",
+      "git clean *": "deny",
       "git push --force*": "deny",
-      "git push -f*": "deny"
+      "git push -f*": "deny",
+      "git push *--force*": "deny",
+      "git push * -f*": "deny"
     }
   }
 }
