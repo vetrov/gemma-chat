@@ -1,6 +1,10 @@
 # gemma-chat
 
-A browser-based chat application powered by Gemma.
+A private, browser-based chat application powered by Gemma 3 1B and WebGPU.
+
+The model runs entirely on the user's device through WebLLM. The first model download only starts
+after explicit confirmation, remains cached in browser storage, and can be removed from the app.
+Conversation history is stored separately in IndexedDB.
 
 ## Development
 
@@ -20,6 +24,7 @@ Run the project checks:
 
 ```bash
 npm run lint
+npm run test
 npm run typecheck
 npm run build
 ```

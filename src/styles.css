@@ -13,7 +13,11 @@
   text-rendering: optimizeLegibility;
   --color-text: #f4f1e8;
   --color-muted: #aaa99f;
+  --color-dim: #77796f;
   --color-accent: #b8e986;
+  --color-panel: #171915;
+  --color-line: #292b25;
+  --color-line-strong: #3b3e35;
 }
 
 * {
@@ -35,6 +39,14 @@ button,
 input,
 textarea {
   font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 ::selection {

@@ -1,0 +1,78 @@
+.dock {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 3rem 1rem 1rem;
+  background: linear-gradient(transparent, #11120f 35%);
+}
+
+.composer {
+  display: flex;
+  width: min(100%, 46rem);
+  align-items: flex-end;
+  gap: 0.75rem;
+  margin: 0 auto;
+  padding: 0.7rem;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 1rem;
+  background: #1a1c17;
+  box-shadow: 0 1rem 4rem rgb(0 0 0 / 24%);
+}
+
+.composer:focus-within {
+  border-color: rgb(184 233 134 / 55%);
+}
+
+.composer textarea {
+  width: 100%;
+  min-height: 2.5rem;
+  max-height: 10rem;
+  resize: vertical;
+  padding: 0.55rem 0.5rem;
+  border: 0;
+  color: var(--color-text);
+  background: transparent;
+  line-height: 1.45;
+  outline: 0;
+}
+
+.composer textarea::placeholder {
+  color: var(--color-dim);
+}
+
+.sendButton,
+.stopButton {
+  min-width: 4.2rem;
+  min-height: 2.5rem;
+  border-radius: 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.sendButton {
+  border: 1px solid var(--color-accent);
+  color: #11120f;
+  background: var(--color-accent);
+}
+
+.sendButton:disabled {
+  border-color: #363831;
+  color: #77796f;
+  background: #2b2d27;
+  cursor: not-allowed;
+}
+
+.stopButton {
+  border: 1px solid #d78d80;
+  color: #ffd3ca;
+  background: transparent;
+}
+
+.dock > p {
+  margin: 0.65rem 0 0;
+  color: var(--color-dim);
+  font-size: 0.65rem;
+  text-align: center;
+}

@@ -1,0 +1,235 @@
+.sidebar {
+  display: flex;
+  width: 18rem;
+  min-height: 100vh;
+  flex: 0 0 18rem;
+  flex-direction: column;
+  padding: 1.25rem;
+  border-right: 1px solid var(--color-line);
+  background: #0c0d0b;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.25rem;
+}
+
+.brandMark {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border-radius: 0.7rem;
+  color: #11120f;
+  background: var(--color-accent);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.brand div {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.brand strong {
+  font-size: 0.9rem;
+}
+
+.brand div span {
+  color: var(--color-dim);
+  font-size: 0.7rem;
+}
+
+.newButton {
+  display: flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 2rem 0;
+  padding: 0 0.85rem;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 0.75rem;
+  color: var(--color-text);
+  background: #171915;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.newButton span {
+  color: var(--color-accent);
+  font-size: 1.25rem;
+}
+
+.newButton:disabled,
+.chatItem button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.sectionLabel {
+  margin: 0 0 0.6rem;
+  padding: 0 0.3rem;
+  color: var(--color-dim);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.chatList {
+  display: grid;
+  gap: 0.45rem;
+  overflow-y: auto;
+}
+
+.chatItem {
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+}
+
+.chatItem:hover,
+.chatItem:focus-within,
+.active {
+  border-color: var(--color-line);
+  background: #171915;
+}
+
+.selectButton {
+  display: grid;
+  width: 100%;
+  gap: 0.3rem;
+  padding: 0.7rem 0.75rem 0.35rem;
+  border: 0;
+  color: var(--color-text);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.selectButton span {
+  overflow: hidden;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selectButton time {
+  color: var(--color-dim);
+  font-size: 0.65rem;
+}
+
+.itemActions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0 0.75rem 0.55rem;
+  opacity: 0;
+}
+
+.chatItem:hover .itemActions,
+.chatItem:focus-within .itemActions,
+.active .itemActions {
+  opacity: 1;
+}
+
+.itemActions button {
+  padding: 0;
+  border: 0;
+  color: var(--color-dim);
+  background: transparent;
+  font-size: 0.62rem;
+  cursor: pointer;
+}
+
+.itemActions button:hover {
+  color: var(--color-text);
+}
+
+.renameForm {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.6rem;
+}
+
+.renameForm input {
+  width: 100%;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 0.4rem;
+  color: var(--color-text);
+  background: #0c0d0b;
+  outline: 0;
+}
+
+.renameForm button {
+  justify-self: end;
+  padding: 0;
+  border: 0;
+  color: var(--color-accent);
+  background: transparent;
+  font-size: 0.68rem;
+  cursor: pointer;
+}
+
+.privacy {
+  margin: auto 0 0;
+  padding: 1rem 0.3rem 0;
+  color: var(--color-dim);
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 48rem) {
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    flex-basis: auto;
+    padding: 0.75rem 1rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .newButton {
+    position: absolute;
+    top: 0.7rem;
+    right: 1rem;
+    min-height: 2.35rem;
+    margin: 0;
+  }
+
+  .sectionLabel,
+  .privacy {
+    display: none;
+  }
+
+  .chatList {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    overflow-x: auto;
+  }
+
+  .chatItem {
+    flex: 0 0 11rem;
+  }
+
+  .itemActions {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 27rem) {
+  .newButton {
+    width: 2.35rem;
+    justify-content: center;
+    padding: 0;
+    font-size: 0;
+  }
+
+  .newButton span {
+    font-size: 1.25rem;
+  }
+}

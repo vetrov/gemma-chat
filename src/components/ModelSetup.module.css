@@ -1,0 +1,172 @@
+.panel {
+  width: min(100%, 43rem);
+  margin: auto;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  border: 1px solid var(--color-line);
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle at 88% 8%, rgb(184 233 134 / 12%), transparent 35%), var(--color-panel);
+  box-shadow: 0 2rem 6rem rgb(0 0 0 / 28%);
+}
+
+.modelMark {
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-bottom: 2rem;
+  place-items: center;
+  border-radius: 1rem;
+  color: #11120f;
+  background: var(--color-accent);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.panel h1 {
+  max-width: 13ch;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+}
+
+.description {
+  max-width: 38rem;
+  margin: 1.5rem 0 0;
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 2rem 0;
+  border-block: 1px solid var(--color-line);
+}
+
+.facts div {
+  padding: 1rem 0;
+}
+
+.facts dt {
+  margin-bottom: 0.35rem;
+  color: var(--color-dim);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.facts dd {
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.progressBlock {
+  margin: 2rem 0 0;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+  color: var(--color-muted);
+  font-size: 0.78rem;
+}
+
+.progressBlock progress {
+  width: 100%;
+  height: 0.4rem;
+  overflow: hidden;
+  border: 0;
+  border-radius: 1rem;
+  background: #2b2d27;
+}
+
+.progressBlock progress::-webkit-progress-bar {
+  background: #2b2d27;
+}
+
+.progressBlock progress::-webkit-progress-value {
+  background: var(--color-accent);
+}
+
+.progressBlock progress::-moz-progress-bar {
+  background: var(--color-accent);
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 2.9rem;
+  padding: 0 1.15rem;
+  border-radius: 0.8rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.primaryButton {
+  border: 1px solid var(--color-accent);
+  color: #11120f;
+  background: var(--color-accent);
+}
+
+.secondaryButton {
+  border: 1px solid var(--color-line-strong);
+  color: var(--color-text);
+  background: transparent;
+}
+
+.error {
+  margin: 1rem 0 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgb(255 139 122 / 35%);
+  border-radius: 0.75rem;
+  color: #ffc2b8;
+  background: rgb(121 43 35 / 18%);
+  font-size: 0.85rem;
+}
+
+.terms {
+  margin: 1.25rem 0 0;
+  color: var(--color-dim);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.terms a {
+  color: var(--color-muted);
+}
+
+.terms code {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 38rem) {
+  .facts {
+    grid-template-columns: 1fr;
+  }
+
+  .facts div + div {
+    border-top: 1px solid var(--color-line);
+  }
+}
