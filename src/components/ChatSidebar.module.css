@@ -97,6 +97,11 @@
   background: #171915;
 }
 
+/* The row's focus ring already outlines it; its own border would double up. */
+.chatItem:has(.selectButton:focus-visible) {
+  border-color: transparent;
+}
+
 .selectButton {
   display: grid;
   width: 100%;
@@ -161,6 +166,10 @@
   border-radius: 0.4rem;
   color: var(--color-text);
   background: #0c0d0b;
+}
+
+/* The input's own accent border is the focus treatment. */
+.renameForm input:focus-visible {
   outline: 0;
 }
 
