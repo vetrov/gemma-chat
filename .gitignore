@@ -12,6 +12,7 @@ dist-ssr
 # Editor and OS files
 .DS_Store
 .idea
+.qoder
 .vscode/*
 !.vscode/extensions.json
 *.suo
