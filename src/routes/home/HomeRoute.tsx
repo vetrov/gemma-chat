@@ -109,13 +109,15 @@ export function HomeRoute() {
           </div>
         ) : showChat ? (
           <div className={styles.chatArea}>
-            {(model.error || chatError) && (
-              <p className={styles.inlineError}>{model.error ?? chatError}</p>
-            )}
-            <MessageList
-              messages={chats.activeConversation?.messages ?? []}
-              streamedResponse={streamedResponse}
-            />
+            <div className={styles.scroll}>
+              {(model.error || chatError) && (
+                <p className={styles.inlineError}>{model.error ?? chatError}</p>
+              )}
+              <MessageList
+                messages={chats.activeConversation?.messages ?? []}
+                streamedResponse={streamedResponse}
+              />
+            </div>
             <ChatComposer
               disabled={!isReady || isSubmitting || chats.isLoading}
               isGenerating={isGenerating}

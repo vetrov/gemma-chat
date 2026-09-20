@@ -1,10 +1,7 @@
 .dock {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 3rem 1rem 1rem;
-  background: linear-gradient(transparent, #11120f 35%);
+  flex: 0 0 auto;
+  padding: 0.5rem 1rem 1rem;
+  background: #11120f;
 }
 
 .composer {

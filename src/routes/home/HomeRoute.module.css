@@ -70,19 +70,27 @@
 
 .setupArea,
 .chatArea {
-  position: relative;
   display: flex;
   min-height: 0;
   flex: 1;
-  overflow-y: auto;
 }
 
 .setupArea {
   padding: clamp(1rem, 4vw, 3rem);
+  overflow-y: auto;
 }
 
 .chatArea {
   flex-direction: column;
+}
+
+/* Only the transcript scrolls; the composer stays pinned below it. */
+.scroll {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
 .inlineError {
